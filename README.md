@@ -7,5 +7,5 @@ docker-compose.yml which creates the mssql-server-linux docker image and automat
 3. Run ```docker-compose up```
 4. The .sql files will be automatically executed in alphanumerical order
 
-To remove the create db image use 
+**To remove the created db image use** 
 ```docker-compose down```
