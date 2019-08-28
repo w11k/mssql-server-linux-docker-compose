@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+  w11k-tss:
+
+services:
+  ecm-db:
+    container_name: sas-ecm-db
+    image:  mcr.microsoft.com/mssql/server:2017-CU14-ubuntu
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+      - SA_PASSWORD=pZWnFgA9KjPWQTEx7mdBK7jh7C6JoWpx
+    volumes:
+      - ./dev/db:/var/opt/mssql/initdb:ro
+    ports:
+      - 1433:1433
+    networks:
+      - w11k-tss
+    command: /var/opt/mssql/initdb/command.sh
