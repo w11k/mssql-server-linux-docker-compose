@@ -5,7 +5,7 @@ networks:
 
 services:
   ecm-db:
-    container_name: sas-ecm-db
+    container_name: mssql-db
     image:  mcr.microsoft.com/mssql/server:2017-CU14-ubuntu
     environment:
       - ACCEPT_EULA=Y
