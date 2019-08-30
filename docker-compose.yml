@@ -1,10 +1,10 @@
 version: '3'
 
 networks:
-  w11k-network:
+  network:
 
 services:
-  ecm-db:
+  db:
     container_name: mssql-db
     image:  mcr.microsoft.com/mssql/server:2017-CU14-ubuntu
     environment:
@@ -14,7 +14,7 @@ services:
     volumes:
       - ./dev/db:/var/opt/mssql/initdb:ro
     ports:
-      - 1433:1433
+      - 1434:1433
     networks:
-      - w11k-network
+      - network
     command: /var/opt/mssql/initdb/command.sh
